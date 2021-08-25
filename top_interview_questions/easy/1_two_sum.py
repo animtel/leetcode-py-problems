@@ -4,12 +4,21 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+        result = []
+        # Dictionary to store the difference and its index
+        index_map = {}
+        # Loop for each element
+        for i, n in enumerate(nums):
+            # Difference which needs to be checked
+            difference = target - n
+            if difference in index_map:
+                result.append(i)
+                result.append(index_map[difference])
+                break
+            else:
+                index_map[n] = i
 
-        return [0, 1]
+        return result
 
 
 def check_hypothesis_for(hypothesis, nums, target):
