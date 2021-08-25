@@ -1,4 +1,3 @@
-# 1. Two Sum problem: https://leetcode.com/problems/roman-to-integer/
 
 class Solution:
     def __init__(self):
