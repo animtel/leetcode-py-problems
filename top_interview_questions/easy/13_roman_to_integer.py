@@ -13,11 +13,6 @@ class Solution:
         }
 
     def romanToInt(self, s: str) -> int:
-        roman_str_len = len(s)
-
-        if roman_str_len < 1 or roman_str_len > 15:
-            return 0
-
         result = 0
         prev_int_to_diff = 0
 
@@ -27,10 +22,9 @@ class Solution:
             if prev_int_to_diff < int_i:
                 result += (int_i - prev_int_to_diff - prev_int_to_diff)
                 prev_int_to_diff = int_i
-                continue
-
-            prev_int_to_diff = int_i
-            result += int_i
+            else:
+                prev_int_to_diff = int_i
+                result += int_i
 
         return result
 
