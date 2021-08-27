@@ -5,6 +5,9 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
+        if len(strs) == 1:
+            return strs[0]
+
         def subtract_to_pref(str_a, str_b):
             common_pref = ''
 
@@ -23,11 +26,13 @@ class Solution:
 
             return common_pref
 
-        pref = strs[0]
-        for s in strs[1:]:
-            pref = subtract_to_pref(s, pref)
+        def rec_loop(strs: List[str], pref):
+            if len(strs) == 1:
+                return subtract_to_pref(strs[0], pref)
 
-        return pref
+            return rec_loop(strs[1:], subtract_to_pref(strs[0], pref))
+
+        return rec_loop(strs[1:], strs[0])
 
 
 def check_hypothesis_for(hypothesis_func, given, should):
@@ -40,3 +45,4 @@ if __name__ == '__main__':
     check_hypothesis_for(hypothesis, ["flower","flow","flight"], 'fl')
     check_hypothesis_for(hypothesis, ["dog","racecar","car"], '')
     check_hypothesis_for(hypothesis, ["aaa","aa","aaa"], 'aa')
+    check_hypothesis_for(hypothesis, [""], '')
