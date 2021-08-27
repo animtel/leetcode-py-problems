@@ -5,34 +5,16 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        if len(strs) == 1:
-            return strs[0]
+        if len(strs) == 0: return ''
+        min_str = min(strs)
+        max_str = max(strs)
 
-        def subtract_to_pref(str_a, str_b):
-            common_pref = ''
+        for i in range(len(min_str)):
+            if min_str[i] != max_str[i]:
+                return min_str[:i]
 
-            len_a, len_b = len(str_a), len(str_b)
-            if len_a > len_b:
-                len_a, len_b = len_b, len_a
+        return min_str
 
-            if len_a == 0 or len_b == 0:
-                return ''
-
-            for i in range(len_a):
-                if str_a[i] == str_b[i]:
-                    common_pref += str_a[i]
-                else:
-                    break
-
-            return common_pref
-
-        def rec_loop(strs: List[str], pref):
-            if len(strs) == 1:
-                return subtract_to_pref(strs[0], pref)
-
-            return rec_loop(strs[1:], subtract_to_pref(strs[0], pref))
-
-        return rec_loop(strs[1:], strs[0])
 
 
 def check_hypothesis_for(hypothesis_func, given, should):
