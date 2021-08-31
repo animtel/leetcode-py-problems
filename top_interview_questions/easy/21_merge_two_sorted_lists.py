@@ -17,6 +17,7 @@ def append_to(head, val):
     tmp.next = ListNode(val)
     return head
 
+
 def create_arr_from_list(head):
     if head.val == None:
         return []
@@ -41,6 +42,7 @@ def create_list_from_arr(arr):
         append_to(head, i)
 
     return head
+
 
 class Solution:
     def get_last(self, head: Optional[ListNode]):
@@ -73,6 +75,7 @@ class Solution:
 
         return result
 
+
 class Solution_00_1:
     def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         if not l1 and not l2:
@@ -101,12 +104,11 @@ class Solution_00_1:
         return merged_list
 
 
-
-
 def check_hypothesis_for(hypothesis_func, given, should):
     processed = hypothesis_func(*given)
     processed = create_arr_from_list(processed)
     assert processed == should, f'Wrong hypothesis for given:{given}, returned: {processed}, should be {should}!'
+
 
 if __name__ == '__main__':
     hypothesis = Solution_00_1().mergeTwoLists
@@ -123,5 +125,4 @@ if __name__ == '__main__':
     # b = create_list_from_arr([])
     # check_hypothesis_for(hypothesis, (a, b), [])
 
-#------------------------------------
-
+# ------------------------------------
