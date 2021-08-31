@@ -19,7 +19,7 @@ def append_to(head, val):
 
 
 def create_arr_from_list(head):
-    if head.val == None:
+    if head.val is None:
         return []
 
     arr = []
