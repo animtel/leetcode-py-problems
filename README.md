@@ -1,5 +1,3 @@
-leetcode-py-problems
-
 In this repository, I store my solutions for popular interview problems. 
 
 I took the list of these tasks on the https://leetcode.com/. 
