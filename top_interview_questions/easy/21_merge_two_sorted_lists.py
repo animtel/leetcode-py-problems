@@ -1,7 +1,7 @@
 # 21. Merge Two Sorted Lists: https://leetcode.com/problems/merge-two-sorted-lists/
 
 from typing import Optional
-
+import copy
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -115,7 +115,6 @@ if __name__ == '__main__':
 
     a = create_list_from_arr([1, 2, 4])
     b = create_list_from_arr([1, 3, 4])
-    check_hypothesis_for(hypothesis, (a, b), [1, 1, 2, 3, 4, 4])
 
     a = create_list_from_arr([1])
     b = create_list_from_arr([1])
@@ -126,3 +125,15 @@ if __name__ == '__main__':
     # check_hypothesis_for(hypothesis, (a, b), [])
 
 # ------------------------------------
+
+    print(create_arr_from_list(a))
+    print(create_arr_from_list(a_d_copied))
+    print(create_arr_from_list(a_s_copied))
+
+    # check_hypothesis_for(hypothesis, (a, b), [1, 1, 2, 3, 4, 4])
+    #
+    # a = create_list_from_arr([])
+    # b = create_list_from_arr([])
+    # check_hypothesis_for(hypothesis, (a, b), [])
+
+
