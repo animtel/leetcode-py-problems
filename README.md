@@ -1,5 +1,14 @@
+Guided by https://neetcode.io/roadmap
+
 In this repository, I store my solutions for popular interview problems. 
 
-I took the list of these tasks on the https://leetcode.com/. 
+conda create --name leetcodepy python=3.10
 
-The first folder describes the collection of tasks, which you can find at https://leetcode.com/problemset/all/?page=1 under the lists tab. Within this problem are divided by the level of difficulty.
+conda activate leetcodepy
+
+pip install -r requirements.txt
+
+jupyter lab --no-browser --ip 0.0.0.0 --port 2222 --allow-root --notebook-dir=.
+
+git config user.email "animtel@gmail.com"
+git config user.name "Daniel Kovalenko"
