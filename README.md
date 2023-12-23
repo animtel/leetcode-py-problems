@@ -12,3 +12,5 @@ jupyter lab --no-browser --ip 0.0.0.0 --port 2222 --allow-root --notebook-dir=.
 
 git config user.email "animtel@gmail.com"
 git config user.name "Daniel Kovalenko"
+
+
